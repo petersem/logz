@@ -33,7 +33,7 @@ app.post("/pstr", (req,res) => {
       });
 });
 
-app.post("/test", (req,res) => {
+app.get("/test", (req,res) => {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     res.write("Your IP is:",ip);
     res.write("Functioning ok");
