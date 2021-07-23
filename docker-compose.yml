@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  logz:
+    container_name: logz
+    image: logz
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      TZ: 'Australia/Brisbane'
+    volumes:
+      - ~/docker/logz:/usr/src/app/logs
+    ports:
+      - 7700:3001
+    restart: unless-stopped
