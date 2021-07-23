@@ -37,6 +37,7 @@ app.post("/pstr", (req,res) => {
     let d = new Date();
     d.getDate();
     let now = d.toISOString();
+    console.log("Posterr heartbeat from: " + ip + "(version " + version + ")");
     let payload = now + "," + ip + "," + version + "," + nsEnabled + "," + odEnabled + "," + sEnabled + "," + rEnabled + "," + pEnabled + "\n"
     fs.appendFile('./logs/posterr.txt', payload , function (err) {
         if (err) throw err;
