@@ -47,7 +47,7 @@ app.get("/test", (req,res) => {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end("Your IP is:",ip,"Functioning ok\n");
+    res.end("Your IP is: " + ip + "\nLogz is functioning ok\n");
 
     fs.appendFile('posterr.txt', payload , function (err) {
         if (err) throw err;
