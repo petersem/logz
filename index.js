@@ -3,6 +3,16 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const cors = require("cors");
+const pjson = require("./package.json");
+
+
+console.log("-------------------------------------------------------");
+console.log(" Logz - A very basic app metrics logger");
+console.log(" Developed by Matt Petersen - Brisbane Australia");
+console.log(" ");
+console.log(" Version: " + pjson.version);
+console.log(" ");
+console.log("-------------------------------------------------------");
 
 // Express settings
 app.use(express.json());
@@ -35,9 +45,9 @@ app.post("/pstr", (req,res) => {
 
 app.get("/test", (req,res) => {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-    res.write("Your IP is:",ip);
-    res.write("Functioning ok");
-    res.sendStatus(200);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end("Your IP is:",ip,"Functioning ok\n");
 
     fs.appendFile('posterr.txt', payload , function (err) {
         if (err) throw err;
