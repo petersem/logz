@@ -1,2 +1,2 @@
 ISO DATE-TIME,IP,Now Screening Enabled, On-demand Enabled, Sonarr Enabled, Radarr Enabled, Custom Pictures Enabled
-2021-07-23T03:20:09.487Z,localhost,1.7.0,true,true,true,true,true
+
