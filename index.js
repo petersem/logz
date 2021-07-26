@@ -24,24 +24,42 @@ app.use(
 );
 app.use(cors());
 
-app.post("/pstr", (req,res) => {
-    let version = req.body.version;
-    let nsEnabled = req.body.nsEnabled;
-    let odEnabled = req.body.odEnabled;
-    let sEnabled = req.body.sEnabled;
-    let rEnabled = req.body.rEnabled;
-    let pEnabled = req.body.pEnabled;
-    let uuid = req.body.uuid;
-    res.sendStatus(200);
-    let d = new Date();
-    d.getDate();
-    let now = d.toISOString();
-    console.log("Posterr heartbeat from: " + uuid + " (version " + version + ")");
-    let payload = now + "," + uuid + "," + version + "," + nsEnabled + "," + odEnabled + "," + sEnabled + "," + rEnabled + "," + pEnabled + "\n"
-    fs.appendFile('./logs/posterr.txt', payload , function (err) {
-        if (err) throw err;
-      });
+app.post("/demo", (req,res) => {
+  let payload = "";
+  Object.keys(req.body).forEach(key => {
+    payload += "," + key + ":" + req.body[key]
+  });
+  payload = payload.substring(1);
+
+  res.sendStatus(200);
+  let d = new Date();
+  d.getDate();
+  let now = d.toLocaleString();
+  console.log("Posterr heartbeat: " + payload);
+  payload = now + payload + "\n"
+  fs.appendFile('./logs/demo.txt', payload , function (err) {
+      if (err) throw err;
+    });
 });
+
+app.post("/pstr", (req,res) => {
+  let payload = "";
+  Object.keys(req.body).forEach(key => {
+    payload += "," + key + ":" + req.body[key]
+  });
+  payload = payload.substring(1);
+
+  res.sendStatus(200);
+  let d = new Date();
+  d.getDate();
+  let now = d.toLocaleString();
+  console.log("Posterr heartbeat: " + payload);
+  payload = now + payload + "\n"
+  fs.appendFile('./logs/posterr.txt', payload , function (err) {
+      if (err) throw err;
+    });
+});
+
 
 app.get("/test", (req,res) => {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;

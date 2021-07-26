@@ -1,2 +1,14 @@
 ISO DATE-TIME,IP,Now Screening Enabled, On-demand Enabled, Sonarr Enabled, Radarr Enabled, Custom Pictures Enabled
 
+2021-07-26T09:33:43.169Z,1ceb5808-a5e7-46a6-8161-1d9f976442f2,1.7.2,true,true,true,true,true
+2021-07-26T10:36:49.813Z,1ceb5808-a5e7-46a6-8161-1d9f976442f2,1.7.2,true,true,true,true,true
+2021-07-26T10:44:15.925Z,undefined:1.7.2,undefined:true,undefined:true,undefined:true,undefined:true,undefined:true,undefined:1ceb5808-a5e7-46a6-8161-1d9f976442f2
+2021-07-26T10:47:35.418Z,version: 1.7.2,nsEnabled: true,odEnabled: true,sEnabled: true,rEnabled: true,pEnabled: true,uuid: 1ceb5808-a5e7-46a6-8161-1d9f976442f2
+2021-07-26T10:48:55.497Z,version:1.7.2,nsEnabled:true,odEnabled:true,sEnabled:true,rEnabled:true,pEnabled:true,uuid:1ceb5808-a5e7-46a6-8161-1d9f976442f2
+26/07/2021, 8:52:11 pm,version:1.7.2,nsEnabled:true,odEnabled:true,sEnabled:true,rEnabled:true,pEnabled:true,uuid:1ceb5808-a5e7-46a6-8161-1d9f976442f2
+26/07/2021, 8:53:31 pm,version:1.7.2,nsEnabled:true,odEnabled:true,sEnabled:true,rEnabled:true,pEnabled:true,uuid:1ceb5808-a5e7-46a6-8161-1d9f976442f2
+26/07/2021, 8:56:49 pm,version:1.7.2,nsEnabled:true,odEnabled:true,sEnabled:true,rEnabled:true,pEnabled:true,uuid:1ceb5808-a5e7-46a6-8161-1d9f976442f2
+26/07/2021, 9:00:03 pmversion:1.7.4,nsEnabled:false,odEnabled:false,sEnabled:true,rEnabled:false,pEnabled:true,uuid:cd3a3300-b747-4a43-949d-c0a8f7d149a0
+26/07/2021, 9:00:27 pm
+26/07/2021, 9:00:29 pm
+26/07/2021, 9:00:34 pmversion:1.7.4,nsEnabled:false,odEnabled:false,sEnabled:true,rEnabled:false,pEnabled:true,uuid:cd3a3300-b747-4a43-949d-c0a8f7d149a0
