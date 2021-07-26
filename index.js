@@ -54,7 +54,7 @@ app.post("/pstr", (req,res) => {
   d.getDate();
   let now = d.toLocaleString();
   console.log("Posterr heartbeat: " + payload);
-  payload = now + payload + "\n"
+  payload = now + "," + payload + "\n"
   fs.appendFile('./logs/posterr.txt', payload , function (err) {
       if (err) throw err;
     });

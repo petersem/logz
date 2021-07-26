@@ -1,6 +1,6 @@
 {
   "name": "logz",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "simple remote logging collector",
   "main": "index.js",
   "scripts": {
