@@ -4,7 +4,7 @@ const app = express();
 const fs = require('fs');
 const cors = require("cors");
 const pjson = require("./package.json");
-
+const ver = require("./versions");
 
 console.log("-------------------------------------------------------");
 console.log(" Logz - A very basic app metrics logger");
@@ -24,23 +24,14 @@ app.use(
 );
 app.use(cors());
 
-app.post("/demo", (req,res) => {
-  let payload = "";
-  Object.keys(req.body).forEach(key => {
-    payload += "," + key + ":" + req.body[key]
-  });
-  payload = payload.substring(1);
+// async function getAppDetails(){
+//   let v = new ver();
+//   let x = await v.GetApps('posterr');
+//   let appObj = JSON.parse(x);
+//   console.log('-->' + x + '<--');
+// }
 
-  res.sendStatus(200);
-  let d = new Date();
-  d.getDate();
-  let now = d.toLocaleString();
-  console.log("Posterr heartbeat: " + payload);
-  payload = now + payload + "\n"
-  fs.appendFile('./logs/demo.txt', payload , function (err) {
-      if (err) throw err;
-    });
-});
+//getAppDetails();
 
 app.post("/pstr", (req,res) => {
   let payload = "";
@@ -48,8 +39,8 @@ app.post("/pstr", (req,res) => {
     payload += "," + key + ":" + req.body[key]
   });
   payload = payload.substring(1);
-
-  res.sendStatus(200);
+  res.send(`{"version":"1.10.0","message":""}`);
+//  res.send(`{"version":"1.10.0","message":"Did you know that clicking on the poster, or the title, will take you to settings?"}`);
   let d = new Date();
   d.getDate();
   let now = d.toLocaleString();
