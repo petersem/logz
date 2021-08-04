@@ -40,7 +40,7 @@ app.post("/pstr", (req,res) => {
   });
   payload = payload.substring(1);
   res.send(`{"version":"1.10.0","message":""}`);
-//  res.send(`{"version":"1.10.0","message":"Did you know that clicking on the poster, or the title, will take you to settings?"}`);
+//  res.send(`{"version":"1.10.1","message":"Did you know that clicking on the poster, or the title, will take you to settings?"}`);
   let d = new Date();
   d.getDate();
   let now = d.toLocaleString();
