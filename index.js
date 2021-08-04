@@ -39,7 +39,7 @@ app.post("/pstr", (req,res) => {
     payload += "," + key + ":" + req.body[key]
   });
   payload = payload.substring(1);
-  res.send(`{"version":"1.10.1","message":""}`);
+  res.send(`{"version":"1.10.2","message":""}`);
 //  res.send(`{"version":"1.10.1","message":"Did you know that clicking on the poster, or the title, will take you to settings?"}`);
   let d = new Date();
   d.getDate();
