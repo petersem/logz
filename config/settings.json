@@ -1,0 +1,18 @@
+{
+    "apps": [
+        {
+            "appName": "posterr",
+            "endPoint": "/pstr",
+            "logFile" : "posterr.log",
+            "version": "1.14.0",
+            "message": "Join the Posterr Discord channel to get updates and limited support. https://discord.gg/x9JEwChs47"
+        },
+        {
+            "appName": "monocker",
+            "endPoint": "/monocker",
+            "logFile" : "monocker.log",
+            "version": "2.5.0",
+            "message": "This is a test monocker message"
+        }
+    ]
+}
