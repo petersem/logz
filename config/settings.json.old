@@ -4,7 +4,7 @@
             "appName": "posterr",
             "endPoint": "/pstr",
             "logFile" : "posterr.log",
-            "version": "1.15.0",
+            "version": "1.14.0",
             "message": "Join the Posterr Discord channel to get updates and limited support. https://discord.gg/x9JEwChs47"
         },
         {
