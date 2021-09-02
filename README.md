@@ -1,5 +1,5 @@
 # logz
-Basic logging tool, similar to a syslog-style app. Takes any parameters in a HTTP post, and retruns current app version number and optional message.
+Basic logging tool, similar to a syslog-style app. Takes any parameters in a HTTP post, and retruns current app version number and optional message. Writes whatever is posted, to a log file
 
 Create a settings.json file in /config and configure for your apps similar to this example. 
 
