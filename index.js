@@ -5,6 +5,7 @@ const fs = require('fs');
 const cors = require("cors");
 const pjson = require("./package.json");
 const ver = require("./versions");
+const setng = require("./settings");
 
 console.log("-------------------------------------------------------");
 console.log(" Logz - A very basic app metrics logger");
@@ -13,6 +14,19 @@ console.log(" ");
 console.log(" Version: " + pjson.version);
 console.log(" ");
 console.log("-------------------------------------------------------");
+
+const settings = loader();
+console.log(settings.apps);
+// ls.apps.forEach((app) =>{
+//   console.log('-->' + app.appName);
+
+// })
+
+function loader(){
+  let stng = new setng();
+  let conf = stng.GetSettings()
+  return conf;
+}
 
 // Express settings
 app.use(express.json());
@@ -24,32 +38,27 @@ app.use(
 );
 app.use(cors());
 
-// async function getAppDetails(){
-//   let v = new ver();
-//   let x = await v.GetApps('posterr');
-//   let appObj = JSON.parse(x);
-//   console.log('-->' + x + '<--');
-// }
-
-//getAppDetails();
-
-app.post("/pstr", (req,res) => {
-  let payload = "";
-  Object.keys(req.body).forEach(key => {
-    payload += "," + key + ":" + req.body[key]
-  });
-  payload = payload.substring(1);
-  res.send(`{"version":"1.14.0","message":""}`);
-//  res.send(`{"version":"1.10.1","message":"Did you know that clicking on the poster, or the title, will take you to settings?"}`);
-  let d = new Date();
-  d.getDate();
-  let now = d.toLocaleString();
-  console.log("Posterr heartbeat: " + payload);
-  payload = now + "," + payload + "\n"
-  fs.appendFile('./logs/posterr.txt', payload , function (err) {
-      if (err) throw err;
+settings.apps.forEach((myApp) => {
+  app.post(myApp.endPoint, (req,res) => {
+    let payload = "";
+    Object.keys(req.body).forEach(key => {
+      payload += "," + key + ":" + req.body[key]
     });
+    payload = payload.substring(1);
+    res.send(`{"version":"` + myApp.version + `","message":"` + myApp.message + `"}`);
+
+    let d = new Date();
+    d.getDate();
+    let now = d;
+    console.log(myApp.appName + " heartbeat: " + payload);
+    payload = now + "," + payload + "\n"
+    fs.appendFile('./logs/' + myApp.logFile, payload , function (err) {
+        if (err) throw err;
+      });
+  });
+  
 });
+
 
 
 app.get("/test", (req,res) => {
