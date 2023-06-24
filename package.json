@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "memorystore": "^1.6.6",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.17"
   },
   "nodemonConfig": {
     "ignore": [
